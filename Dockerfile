@@ -48,7 +48,7 @@ RUN echo "## Installing base ##" && \
     && chown -R nobody.nobody /usr/src/wordpress \
     && rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
 
-EXPOSE 8080
+EXPOSE 80
 
 # Configure nginx
 ADD config/nginx.conf /etc/nginx/nginx.conf
