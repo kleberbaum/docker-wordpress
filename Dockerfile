@@ -45,12 +45,10 @@ RUN echo "## Installing base ##" && \
     && echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c - \
     && tar -xzf wordpress.tar.gz -C /usr/src/ \
     && rm wordpress.tar.gz \
-    && chown -R nobody.nobody /usr/src/wordpress
-    && apk del build-dependencies \
+    && chown -R nobody.nobody /usr/src/wordpress \
     && rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
 
-
-EXPOSE 80
+EXPOSE 8080
 
 # Configure nginx
 ADD config/nginx.conf /etc/nginx/nginx.conf
